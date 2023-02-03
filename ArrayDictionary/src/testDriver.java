@@ -26,7 +26,7 @@ public class testDriver {
 
         //returns whole array list
         System.out.println("[1,2,3,4]: " + dict.keys());
-        System.out.println("orange, bananas, mangoes, peaches]: " + dict.values());
+        System.out.println("[orange, bananas, mangoes, peaches]: " + dict.values());
 
         //testing remove and contains
         System.out.println("null: " + dict.remove(5));
@@ -38,6 +38,5 @@ public class testDriver {
         //returns whole (updated) dictionary
         System.out.println("[1,3,4]: " + dict.keys());
         System.out.println("orange, mangoes, peaches]: " + dict.values());
-
     }
 }

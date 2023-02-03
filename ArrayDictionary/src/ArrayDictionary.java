@@ -4,8 +4,8 @@ import java.util.Collection;
 //january+feb 2023
 public class ArrayDictionary<E,T> {
     //instance data
-    private ArrayList<E> keys; //initalize an array list of all keys
-    private ArrayList<T> values; //initalizing an arraylist for all values
+    private ArrayList<E> keys; //initialize an array list of all keys
+    private ArrayList<T> values; //initializing an arraylist for all values
     private int size = 0;
 
     public ArrayDictionary() {
@@ -52,7 +52,7 @@ public class ArrayDictionary<E,T> {
         //returns true if "key" is associated with a value
         return keys.contains(key);
     }
-    
+
     boolean isEmpty() {
         //returns whether dictionary is empty or not
         if (keys.size() == 0){
