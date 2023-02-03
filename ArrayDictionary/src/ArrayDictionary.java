@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ArrayDictionary {
+public class ArrayDictionary<T, E> {
     //instance data
     private ArrayList<E> keys; //initalize an array list of all keys
     private ArrayList<T> values; //initalizing an arraylist for all values
@@ -16,16 +16,17 @@ public class ArrayDictionary {
     void put(E key, T value) {
         //add a key-value pair to the dictionary
         if(!keys.contains(key)){
-            //add key AND value into each arraylist dictionary
-            keys.add(key);
-            values.add(value);
+            //add key AND value into each arraylist dictionary and update size
+            size++;
+            keys.add(key); //adding key into keys dictionary
+            values.add(value); //adding value to values dictionary
         } else {
             System.out.println("It already exists"); //the key already exists in the dictionary
         }
     }
     T get(E key) {
         //get the value associated with "key"
-        if(contains(key)){
+        if(keys.contains(key)){
             return values.get(keys.indexOf(key)); //returns the value that is at the same index of where "key" is in keys
         } else {
             return null; //this means there is the "key" doesn't exist
@@ -33,7 +34,15 @@ public class ArrayDictionary {
     }
     T remove(E key) {
         //remove a key-value pair and return the value
-        return null;
+        if(keys.contains(key)){
+            T removedValue = values.get(keys.indexOf(key));
+            keys.remove(keys.indexOf(key));
+            values.remove(removedValue);
+            size--;
+            return removedValue;
+        } else {
+            return null;
+        }
     }
     boolean contains(E key) {
         //returns true if "key" is associated with a value
