@@ -13,7 +13,7 @@ public class ArrayDictionary {
     }
 
     void put(E key, T value) {
-        //add an key-value pair to the dictionary
+        //add a key-value pair to the dictionary
         if(keys.contains(key)){
             System.out.println("It already exists");
         } else {
@@ -23,19 +23,23 @@ public class ArrayDictionary {
         }
     }
     T get(E key) {
-        //get the value associated with a given key
-        return null;
+        //get the value associated with "key"
+        if(contains(key)){
+            return values.(keys.indexOf(key));
+        } else {
+            return null;
+        }
     }
     T remove(E key) {
-        //remove a key-value pair and return its value
+        //remove a key-value pair and return the value
         return null;
     }
     boolean contains(E key) {
-        //returns true if the given key has an associated value
+        //returns true if "key" is associated with a value
         return keys.contains(key);
     }
     boolean isEmpty() {
-        //returns true if the dictionary is empty
+        //returns whether dictionary is empty or not
         if (keys.size() == 0){
             return true;
         } else {
@@ -43,7 +47,7 @@ public class ArrayDictionary {
         }
     }
     int size(){
-        //returns the number of key-value pairs in the dictionary
+        //returns the number of key-value pairs
         return size;
     }
     Collection<E> keys() {
