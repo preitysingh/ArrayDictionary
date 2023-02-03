@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collection;
-
-public class ArrayDictionary<T, E> {
+//preity's arrayDictionary class
+//january+feb 2023
+public class ArrayDictionary<E,T> {
     //instance data
     private ArrayList<E> keys; //initalize an array list of all keys
     private ArrayList<T> values; //initalizing an arraylist for all values
@@ -21,9 +22,10 @@ public class ArrayDictionary<T, E> {
             keys.add(key); //adding key into keys dictionary
             values.add(value); //adding value to values dictionary
         } else {
-            System.out.println("It already exists"); //the key already exists in the dictionary
+            System.out.println("**It already exists, can't assign another value to the key"); //the key already exists in the dictionary
         }
     }
+
     T get(E key) {
         //get the value associated with "key"
         if(keys.contains(key)){
@@ -32,6 +34,7 @@ public class ArrayDictionary<T, E> {
             return null; //this means there is the "key" doesn't exist
         }
     }
+
     T remove(E key) {
         //remove a key-value pair and return the value
         if(keys.contains(key)){ //if key actually exists in the keys arraylist
@@ -44,10 +47,12 @@ public class ArrayDictionary<T, E> {
             return null; //there is no "key" in the arraylist keys
         }
     }
+
     boolean contains(E key) {
         //returns true if "key" is associated with a value
         return keys.contains(key);
     }
+    
     boolean isEmpty() {
         //returns whether dictionary is empty or not
         if (keys.size() == 0){
@@ -56,14 +61,17 @@ public class ArrayDictionary<T, E> {
             return false;
         }
     }
+
     int size(){
         //returns the number of key-value pairs
         return size;
     }
+
     Collection<E> keys() {
         //returns a Collection¹ of keys
         return new ArrayList<>(keys);
     }
+
     Collection<T>  values() {
         //returns a Collection of values
         return new ArrayList<>(values);
