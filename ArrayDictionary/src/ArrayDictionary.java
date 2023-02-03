@@ -34,14 +34,14 @@ public class ArrayDictionary<T, E> {
     }
     T remove(E key) {
         //remove a key-value pair and return the value
-        if(keys.contains(key)){
-            T removedValue = values.get(keys.indexOf(key));
-            keys.remove(keys.indexOf(key));
-            values.remove(removedValue);
-            size--;
-            return removedValue;
+        if(keys.contains(key)){ //if key actually exists in the keys arraylist
+            T removedValue = values.get(keys.indexOf(key)); //store the value that is paired with "key"
+            keys.remove(keys.indexOf(key)); //remove key in the keys arraylist using "remove" because it is an arraylist
+            values.remove(removedValue); //remove the value associated with that key
+            size--; //decrease size by one
+            return removedValue; //return the value that was removed
         } else {
-            return null;
+            return null; //there is no "key" in the arraylist keys
         }
     }
     boolean contains(E key) {
